@@ -9,10 +9,10 @@ from pathlib import Path
 import glob
 from tqdm import tqdm
 
-client = NotionClient(token_v2=token_v2)
-page = client.get_block(notion_url)
+client = NotionClient(token_v2=tokenv2)
+page = client.get_block(page_url)
 
-for fname in tqdm(glob.glob("{root_dir}/**/*.md", recursive=True)):
+for fname in tqdm(glob.glob("{}/**/*.md".format(root_dir), recursive=True)):
     with open(fname, "r", encoding="utf-8") as mdFile:
 
         md_txt = mdFile.read().split("\n")
